@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="lab_1">
+  <ClassDiagramComponents>
+    <Class name="Lab_1" package="lab_1" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Test" package="lab_1" visibility="public" xPosition="304.0" yPosition="663.0">
+      <Fields>
+        <Field name="STUDENT1" type="Student" visibility="package" isStatic="true"/>
+        <Field name="STUDENT2" type="Student" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Person" package="lab_1" visibility="public" xPosition="304.0" yPosition="20.0">
+      <Fields>
+        <Field name="firstName" type="String" visibility="private"/>
+        <Field name="lastName" type="String" visibility="private"/>
+        <Field name="birthDate" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="SetFirstName" returnType="void" visibility="public">
+          <Argument type="String" name="firstName"/>
+        </Method>
+        <Method name="GetFirstName" returnType="String" visibility="public"/>
+        <Method name="SetLastName" returnType="void" visibility="public">
+          <Argument type="String" name="lastName"/>
+        </Method>
+        <Method name="GetLastName" returnType="String" visibility="public"/>
+        <Method name="SetBirthDate" returnType="void" visibility="public">
+          <Argument type="String" name="birthDate"/>
+        </Method>
+        <Method name="GetBirthDate" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StudentIDCard" package="lab_1" visibility="public" xPosition="880.0" yPosition="500.0">
+      <Fields>
+        <Field name="yearStarted" type="int" visibility="private"/>
+        <Field name="programName" type="String" visibility="private"/>
+        <Field name="IDNumber" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="yearStarted"/>
+          <Argument type="String" name="programName"/>
+          <Argument type="String" name="IDNumber"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="SetYearStarted" returnType="void" visibility="public">
+          <Argument type="int" name="YearStarted"/>
+        </Method>
+        <Method name="GetYearStarted" returnType="int" visibility="public"/>
+        <Method name="SetProgramName" returnType="void" visibility="public">
+          <Argument type="String" name="programName"/>
+        </Method>
+        <Method name="GetProgramName" returnType="String" visibility="public"/>
+        <Method name="SetIDNumber" returnType="void" visibility="public">
+          <Argument type="String" name="IDNumber"/>
+        </Method>
+        <Method name="GetIDNumber" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ContactInfo" package="lab_1" visibility="public" xPosition="707.0" yPosition="20.0">
+      <Fields>
+        <Field name="phoneNumber" type="long" visibility="private"/>
+        <Field name="emergContactName" type="String" visibility="private"/>
+        <Field name="emergContactNumber" type="long" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="long" name="phoneNumber"/>
+          <Argument type="String" name="emergContactName"/>
+          <Argument type="long" name="emergContactNumber"/>
+          <Argument type="String" name="email"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="SetPhoneNumber" returnType="void" visibility="public">
+          <Argument type="long" name="phoneNumber"/>
+        </Method>
+        <Method name="GetPhoneNumber" returnType="long" visibility="public"/>
+        <Method name="SetEmergContactName" returnType="void" visibility="public">
+          <Argument type="String" name="emergContactName"/>
+        </Method>
+        <Method name="GetEmergContactName" returnType="String" visibility="public"/>
+        <Method name="SetEmergContactNumber" returnType="void" visibility="public">
+          <Argument type="long" name="emergContactNumber"/>
+        </Method>
+        <Method name="GetEmergContactNumber" returnType="long" visibility="public"/>
+        <Method name="SetEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="GetEmail" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Student" package="lab_1" visibility="public" xPosition="304.0" yPosition="371.0">
+      <Fields>
+        <Field name="Information" type="ContactInfo" visibility="private"/>
+        <Field name="Card" type="StudentIDCard" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ContactInfo" name="Information"/>
+          <Argument type="StudentIDCard" name="Card"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="GetInformation" returnType="ContactInfo" visibility="public"/>
+        <Method name="SetInformation" returnType="void" visibility="public">
+          <Argument type="ContactInfo" name="Information"/>
+        </Method>
+        <Method name="GetCard" returnType="StudentIDCard" visibility="public"/>
+        <Method name="SetCard" returnType="void" visibility="public">
+          <Argument type="StudentIDCard" name="Card"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Information" source="lab_1.Student" target="lab_1.ContactInfo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="lab_1.Student" target="lab_1.Person"/>
+    <UseRelation name="" source="lab_1.Student" target="lab_1.StudentIDCard" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Card" source="lab_1.Student" target="lab_1.StudentIDCard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab_1.Student" target="lab_1.ContactInfo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="STUDENT1" source="lab_1.Test" target="lab_1.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="STUDENT2" source="lab_1.Test" target="lab_1.Student" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

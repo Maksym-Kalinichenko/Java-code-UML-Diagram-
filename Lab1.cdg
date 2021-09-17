@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Lab1">
+  <ClassDiagramComponents>
+    <Class name="Person" package="" visibility="public" xPosition="128.0" yPosition="83.0">
+      <Fields>
+        <Field name="firstName" type="String" visibility="private"/>
+        <Field name="lastName" type="String" visibility="private"/>
+        <Field name="birthDate" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="SetFirstName" returnType="void" visibility="public"/>
+        <Method name="GetFirstName" returnType="String" visibility="public"/>
+        <Method name="SetLastName" returnType="void" visibility="public"/>
+        <Method name="GetLastName" returnType="String" visibility="public"/>
+        <Method name="SetBirthDate" returnType="void" visibility="public"/>
+        <Method name="GetBirthDate" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ContactInfo" package="" visibility="public" xPosition="525.0" yPosition="83.0">
+      <Fields>
+        <Field name="phoneNumber" type="long" visibility="private"/>
+        <Field name="emergencyContactName" type="String" visibility="private"/>
+        <Field name="emergencyContactNumber" type="long" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="SetPhoneNumber" returnType="void" visibility="public"/>
+        <Method name="GetPhoneNumber" returnType="long" visibility="public"/>
+        <Method name="SetEmergencyName" returnType="void" visibility="public"/>
+        <Method name="GetEmergencyName" returnType="String" visibility="public"/>
+        <Method name="SetEmergencyNumber" returnType="void" visibility="public"/>
+        <Method name="GetEmergencyNumber" returnType="long" visibility="public"/>
+        <Method name="SetEmail" returnType="void" visibility="public"/>
+        <Method name="GetEmail" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StudentIDCard" package="" visibility="public" xPosition="554.0" yPosition="495.0">
+      <Fields>
+        <Field name="yearStarted" type="String" visibility="private"/>
+        <Field name="programName" type="String" visibility="private"/>
+        <Field name="IDNumber" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="SetYearStarted" returnType="void" visibility="public"/>
+        <Method name="GetYearStarted" returnType="String" visibility="public"/>
+        <Method name="SetProgramName" returnType="void" visibility="public"/>
+        <Method name="GetProgramName" returnType="String" visibility="public"/>
+        <Method name="SetIDNumber" returnType="void" visibility="public"/>
+        <Method name="GetIDNumber" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Student" package="StuentIDCard" visibility="public" xPosition="128.0" yPosition="495.0">
+      <Fields>
+        <Field name="Information" type="ContactInfo" visibility="private"/>
+        <Field name="Card" type="StudentIDCard" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="GetInformation" returnType="ContactInfo" visibility="public"/>
+        <Method name="SetInformation" returnType="void" visibility="public"/>
+        <Method name="GetCard" returnType="StudentIDCard" visibility="public"/>
+        <Method name="SetCard" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="idCard" source="StuentIDCard.Student" target="StudentIDCard" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="contactInfo" source="StuentIDCard.Student" target="ContactInfo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="StuentIDCard.Student" target="Person"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
